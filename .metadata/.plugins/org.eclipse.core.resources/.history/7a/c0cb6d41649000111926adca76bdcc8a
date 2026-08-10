@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>AI (Artificial Intelligence, 인공지능) 란?</h1>
+
+	<p>
+		- 인간의 학습, 추론, 판단 등의 지적 능력을 컴퓨터로 구현한 기술 (컴퓨터한테 명령해서 - 코딩)
+	</p>
+
+</body>
+</html>

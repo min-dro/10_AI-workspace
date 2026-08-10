@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>AI (Artificial Intelligence, 인공지능) 란?</h1>
+
+	<p>
+		- 인간의 학습, 추론, 판단 등의 지적 능력을 컴퓨터로 구현한 기술 (컴퓨터한테 명령해서 - 코딩) <br>
+		- 넓은 의미로 따지면 AI 는 큰 카테고리고, 그 안에 머신러닝, 딥러닝, LLM 등이 포함됨!! <br>
+		
+		<br>
+		
+		1. Machine Learning (ML, 머신러닝) : 데이터를 학습해서 패턴을 찾아내는 기술 <br>
+		예) 사람들의 키랑 몸무게 정보들을 가지고 발사이즈를 "예측" (Regression, 회귀) <br>
+		    사람들의 혈압, 몸무게 정보들을 가지고 당뇨인지 아닌지 "판별" (Classification, 분류) <br>
+		
+		2. Deep Learning (DL, 딥러닝) : 인공 신경망을 이용한 머신러닝의 한 분야 <br>
+		
+		
+		3. Large Language Model (LLM, 거대 언어 모델) : 대규모 텍스트 데이터를 학습한 거대 언어 모델 (자연어)
+	</p>
+	
+	
+
+</body>
+</html>

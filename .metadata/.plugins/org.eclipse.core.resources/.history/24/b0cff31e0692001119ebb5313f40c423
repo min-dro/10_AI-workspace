@@ -1,0 +1,11 @@
+spring.application.name=API_Local_Project
+
+server.servlet.context-path=/ai
+server.port=8007
+
+# View Resolver 설정
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# 로컬 LLM 설정 (Ollama 설정)
+# Ollama 서버 주소 셋팅 (생략 시 기본값은 http://localhost:11434)

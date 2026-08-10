@@ -1,0 +1,94 @@
+package com.kh.ai.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.messages.AssistantMessage;
+import org.springframework.ai.chat.messages.Message;
+import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class AIController {
+
+	@Autowired
+	private ChatModel chatModel;
+	
+	@Autowired
+	private ChatClient chatClient;
+	
+	private ArrayList<Message> chatHistory = new ArrayList<>();
+	
+	@GetMapping("/chat1")
+	public String chatPage1() {
+		
+		return "chatting1";
+	}
+
+	@ResponseBody
+	@PostMapping("/chat1/send")
+	public String sendMessage1(String message) {
+		
+		// ChatModel 객체 이용
+		String reply = chatModel.call(new Prompt(message))
+								.getResult()
+								.getOutput()
+								.getText();
+		
+		return reply;
+	}
+	
+	// -----------------------------------------
+	
+	@GetMapping("/chat2")
+	public String chatPage2() {
+		
+		return "chatting2";
+		
+	}
+	
+	@ResponseBody
+	@PostMapping("/chat2/send")
+	public String sendMessage(String message) {
+		
+		// > Client
+		String reply = chatClient.prompt(message)
+								 .call()
+								 .content();
+		
+		return reply;
+	
+	}
+	
+	// -----------------------------------
+	
+	@GetMapping("/chat3")
+	public String chatPage3() {
+		
+		return "chatting3";
+	}
+	
+	@ResponseBody
+	@PostMapping("/chat3/send")
+	public String sendMessage3(String message) {
+		
+		chatHistory.add(new UserMessage(message));
+		
+		// ChatModel 또는 ChatClient 를 통해 메세지 전달 후 응답 받아내기
+		String reply = chatModel.call(new Prompt(chatHistory))
+								.getResult()
+								.getOutput()
+								.getText();
+		
+		chatHistory.add(new AssistantMessage(reply));
+		
+		return reply;
+	}
+	
+}
