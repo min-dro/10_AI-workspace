@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.ai.chat.model.ChatModel"/>
-    <fullyQualifiedTypeName name="org.springframework.ai.chat.messages.Message"/>
     <fullyQualifiedTypeName name="org.springframework.ai.chat.client.ChatClient.Builder"/>
+    <fullyQualifiedTypeName name="org.springframework.ai.chat.client.ChatClient"/>
+    <fullyQualifiedTypeName name="org.springframework.ai.chat.client.ChatClient.PromptSystemSpec"/>
+    <fullyQualifiedTypeName name="org.springframework.ai.chat.messages.Message"/>
 </qualifiedTypeNameHistroy>
